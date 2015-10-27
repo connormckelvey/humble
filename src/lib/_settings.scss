@@ -1,0 +1,21 @@
+$number_of_columns: 12 !default;
+$breakpoints: (
+  xs: (
+    high: 30rem,
+  ),
+  sm: (
+    low: 30.0625rem,
+    high: 40rem,
+  ),
+  md: (
+    low: 40.0625rem,
+    high: 64rem,
+  ),
+  lg: (
+    low: 64.0625rem,
+    high: 90rem,
+  ),
+  xl: (
+    low: 90.0625rem
+  )
+);

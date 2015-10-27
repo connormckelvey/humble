@@ -1,0 +1,68 @@
+@import "lib/settings";
+@import "lib/media_queries";
+@import "lib/components/row";
+@import "lib/components/column";
+
+@mixin column_base($i , $cols) {
+  flex: 0 0 percentage($i / $cols);
+}
+
+@mixin columns($breakpoint, $modifier: false) {
+  $i: $number_of_columns;
+  $selector: '';
+  @while $i > 0 {
+    @if $modifier {
+      $selector: ".col-#{$breakpoint}-#{$modifier}-#{$i}";
+    }
+    @else {
+      $selector: ".col-#{$breakpoint}-#{$i}";
+    }
+    #{$selector} {
+      @include column_base($i, $number_of_columns);
+    }
+    $i: $i - 1
+  }
+}
+
+@each $breakpoint, $range in $breakpoints {
+
+  $query: media_up($breakpoint);
+  @if not $query {
+    @include columns($breakpoint);
+
+    @media screen and (orientation: portrait) {
+      @include columns($breakpoint, p);
+    }
+
+    @media screen and (orientation: landscape) {
+      @include columns($breakpoint, l);
+    }
+  }
+  @else {
+    @media #{$query} {
+      @include columns($breakpoint);
+
+      @media screen and (orientation: portrait) {
+        @include columns($breakpoint);
+      }
+
+      @media screen and (orientation: landscape) {
+        @include columns($breakpoint);
+      }
+    }
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.pad {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background: rgba(0,0,0,.2);
+
+}

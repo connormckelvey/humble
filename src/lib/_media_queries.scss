@@ -1,0 +1,10 @@
+@function media_up($breakpoint) {
+  $low: map-get(map-get($breakpoints, $breakpoint), low);
+
+  @if $low {
+    @return "(min-width: #{$low})";
+  }
+  @else {
+    @return false;
+  }
+}
