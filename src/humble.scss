@@ -3,6 +3,9 @@
 @import "lib/components/row";
 @import "lib/components/column";
 
+$number_of_columns: $number_of_columns_default !default;
+$breakpoints: $breakpoints_default !default;
+
 @mixin column_base($i , $cols) {
   flex: 0 0 percentage($i / $cols);
 }
@@ -53,16 +56,16 @@
   }
 }
 
-html {
-  box-sizing: border-box;
-}
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-.pad {
-  padding: 0.5rem;
-  margin: 0.5rem;
-  background: rgba(0,0,0,.2);
-
-}
+// html {
+//   box-sizing: border-box;
+// }
+// *, *::before, *::after {
+//   box-sizing: inherit;
+// }
+//
+// .pad {
+//   padding: 0.5rem;
+//   margin: 0.5rem;
+//   background: rgba(0,0,0,.2);
+//
+// }
