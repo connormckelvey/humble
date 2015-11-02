@@ -1,6 +1,10 @@
-[class*="row"] {
+.row {
   display: flex;
   flex-wrap: wrap; }
+  .row.row-reverse {
+    flex-direction: row-reverse; }
+  .row.column-reverse {
+    flex-direction: column-reverse; }
 
 [class*="col"] {
   flex: 0 1 auto;
