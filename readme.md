@@ -1,13 +1,13 @@
-#Humble Grid
+# Humble Grid
 
 Humble is a lightweight, Flexbox based grid system built with Sass. Humble does not apply gutters in the form of margins or padding. Humble is humble.
 
 
-##Rows and Columns
+## Rows and Columns
 Just like grids in Foundation or Bootstrap, Humble focuses on rows and columns. By default, Humble allows for 12 columns per row. This can be overridden using the `$number_of_columns` variable. Set to any number you like.
 
 
-###Breakpoints
+### Breakpoints
 Out of the box, Humble supports 5 Breakpoints: `xs`, `sm`, `md`, `lg`, and `xl`:
 
 ```scss
@@ -35,7 +35,7 @@ $breakpoints: (
 
 These values can be changed by completely overriding the `$breakpoints` map, or by merging two maps together.
 
-###Orientation
+### Orientation
 Unlike other grid systems, Humble include modifiers for targeting device orientation. Example
 
 ```html
